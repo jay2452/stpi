@@ -45,3 +45,16 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'devise'
+gem 'rolify'
+gem 'cancancan'
+gem 'bootstrap-sass'
+gem 'paperclip'
+gem 'will_paginate'
+gem "font-awesome-rails"
+gem 'rails_admin'
+gem 'ransack'
+gem 'chosen-rails'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'google-webfonts-rails'

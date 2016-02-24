@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+  <div class="col-md-2">
+    <!-- <div class="flex-container">
+      <div class="flex-item">Advantage STPI</div>
+      <div class="flex-item">Right to Information</div>
+      <div class="flex-item">Downloads</div>
+      <div class="flex-item">Tenders</div>
+      <div class="flex-item">List of Holidays</div>
+      <div class="flex-item">STP Member List</div>
+      <div class="flex-item">STPI Center</div>
+      <div class="flex-item">Grievance Cell</div>
+      <div class="flex-item">Sub Center</div>
+      <div class="flex-item">FAQs</div>
+    </div> -->
+
+    <div class="col-md-6" style="margin-left:-2%;">
+      <br>
+      <div class="rotated-box">
+        <div id="reverse-rotate" style="margin-top: 15%;"><%= link_to "About Us", '#' %></div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 15%;">Policy</div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-top: 20%;">IT Park</div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-left: 1%; margin-top: 20%;">Tender</div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6" style="margin-left:2%;">
+      <br>
+      <div class="rotated-box">
+        <div id="reverse-rotate" style="margin-left: -12%; margin-top: 25%;"><%= link_to "Downloads", downloads_path %></div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-left: -1%; margin-top: 15%;">Grievance <br>&nbsp;&nbsp;Cell</div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 6%;">&nbsp;&nbsp;Sub <br> Center</div>
+      </div>
+      <div class="rotated-box" style="margin-top:-5%;">
+        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 20%;">FAQs</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-8">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= image_tag("banner1.jpg") %>
+        </div>
+
+        <div class="item">
+          <%= image_tag("banner2.jpg") %>
+        </div>
+
+        <div class="item">
+          <%= image_tag("banner3.jpg") %>
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="panel panel-default" style="margin-left:-7%; margin-right: -7%;">
+      <div class="panel-heading">
+        News and events (<%= link_to "more", feeds_index_path %>)
+      </div>
+
+      <div class="panel-body">
+          <% @feeds.each do |feed| %>
+            <%= feed.topic %> <br>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

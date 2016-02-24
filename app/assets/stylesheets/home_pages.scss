@@ -1,0 +1,48 @@
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    text-align: center;
+    background-color: cornflowerblue;
+    height: 30px;
+    margin: 5px;
+}
+
+
+.rounded-tabs {
+  border-radius: 20px 20px 2px 2px;
+  background: rgb(138, 226, 241);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 0.5%;
+}
+
+.rotated-box {
+    width: 70px;
+    height: 70px;
+    background-color: yellow;
+    /* Rotate div */
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    border-style: solid;
+
+}
+
+#reverse-rotate{
+-ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+    padding-top: 2%;
+
+}
