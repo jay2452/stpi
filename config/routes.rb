@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'feedbacks/index'
 
   resources :careers
   resources :consultancies
@@ -23,6 +22,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home_pages#index'
+  get '/feedbacks' => 'feedbacks#index'
+
+  post '/feedbacks' => 'feedbacks#create', as: :create_feedback
 
   get '/contact' => 'home_pages#contact', as: :contact
   # Example of regular route:

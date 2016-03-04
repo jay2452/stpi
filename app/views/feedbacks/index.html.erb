@@ -1,2 +1,18 @@
-<h1>Feedbacks#index</h1>
-<p>Find me in app/views/feedbacks/index.html.erb</p>
+<div class="container">
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-8">
+    <%= simple_form_for :feedback, controller: :feedbacks, action: :create, method: :post do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :subject %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+</div>

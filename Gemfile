@@ -71,3 +71,4 @@ gem 'google-webfonts-rails'
 
 
 gem 'ckeditor'
+gem 'simple_form'
