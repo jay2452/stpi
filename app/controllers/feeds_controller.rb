@@ -1,6 +1,8 @@
 class FeedsController < ApplicationController
 
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+
   def index
     @feeds = Feed.all.order(created_at: :desc)
   end

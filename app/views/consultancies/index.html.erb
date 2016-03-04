@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
-
 <!--
 
  -->
-
 <div class="container-fluid">
   <div class="col-md-2">
     <% if current_user && (current_user.has_role? :admin) %>
-      <%= link_to 'New Sub center', new_sub_center_path %>
+      <%= link_to 'New Consultancy', new_consultancy_path %>
     <% end %>
   </div>
 
@@ -21,13 +19,13 @@
         </thead>
 
         <tbody>
-          <% @sub_centers.each do |sub_center| %>
+          <% @consultancies.each do |consultancy| %>
             <tr>
-              <td><%= raw sub_center.content %></td>
+              <td><%= raw consultancy.content %></td>
               <% if current_user && (current_user.has_role? :admin) %>
-                <td><%= link_to 'Show', sub_center %></td>
-                <td><%= link_to 'Edit', edit_sub_center_path(sub_center) %></td>
-                <td><%= link_to 'Destroy', sub_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Show', consultancy %></td>
+                <td><%= link_to 'Edit', edit_consultancy_path(consultancy) %></td>
+                <td><%= link_to 'Destroy', consultancy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>
           <% end %>

@@ -1,5 +1,6 @@
 class PoliciesController < ApplicationController
   before_action :set_policy, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
 
   # GET /policies
   # GET /policies.json

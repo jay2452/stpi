@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
-
 <!--
+<h1>Listing Careers</h1>
 
- -->
 
-<div class="container-fluid">
+
+<br>
+
+-->
+
+<div class="container">
   <div class="col-md-2">
     <% if current_user && (current_user.has_role? :admin) %>
-      <%= link_to 'New Sub center', new_sub_center_path %>
+      <%= link_to 'New Career', new_career_path %>
     <% end %>
   </div>
 
@@ -21,20 +25,20 @@
         </thead>
 
         <tbody>
-          <% @sub_centers.each do |sub_center| %>
+          <% @careers.each do |career| %>
             <tr>
-              <td><%= raw sub_center.content %></td>
+              <td><%= raw career.content %></td>
               <% if current_user && (current_user.has_role? :admin) %>
-                <td><%= link_to 'Show', sub_center %></td>
-                <td><%= link_to 'Edit', edit_sub_center_path(sub_center) %></td>
-                <td><%= link_to 'Destroy', sub_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Show', career %></td>
+                <td><%= link_to 'Edit', edit_career_path(career) %></td>
+                <td><%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
+
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-    <br>
   </div>
 
   <div class="col-md-2">

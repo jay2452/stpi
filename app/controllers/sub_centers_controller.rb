@@ -1,5 +1,6 @@
 class SubCentersController < ApplicationController
   before_action :set_sub_center, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
 
   # GET /sub_centers
   # GET /sub_centers.json

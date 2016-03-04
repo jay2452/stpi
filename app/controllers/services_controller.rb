@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
   # GET /services
   # GET /services.json
   def index
@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
   # GET /services/1.json
   def show
     respond_to do |format|
-      format.html
+      # format.html
       format.js
     end
   end
