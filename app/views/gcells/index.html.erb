@@ -1,27 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Gcells</h1>
+<!-- -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gcells.each do |gcell| %>
-      <tr>
-        <td><%= raw gcell.content %></td>
-        <td><%= link_to 'Show', gcell %></td>
-        <td><%= link_to 'Edit', edit_gcell_path(gcell) %></td>
-        <td><%= link_to 'Destroy', gcell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container-fluid">
+  <div class="col-md-2">
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to 'New Gcell', new_gcell_path %>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <div class="col-md-8">
+    <div class="well">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<%= link_to 'New Gcell', new_gcell_path %>
+        <tbody>
+          <% @gcells.each do |gcell| %>
+            <tr>
+              <td><%= raw gcell.content %></td>
+              <% if current_user && (current_user.has_role? :admin) %>
+                <td><%= link_to 'Show', gcell %></td>
+                <td><%= link_to 'Edit', edit_gcell_path(gcell) %></td>
+                <td><%= link_to 'Destroy', gcell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+</div>

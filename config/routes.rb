@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :missions
   resources :services
   resources :faqs
   resources :sub_centers

@@ -1,27 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing It Parks</h1>
+<!--
+ -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @it_parks.each do |it_park| %>
-      <tr>
-        <td><%= raw it_park.content %></td>
-        <td><%= link_to 'Show', it_park %></td>
-        <td><%= link_to 'Edit', edit_it_park_path(it_park) %></td>
-        <td><%= link_to 'Destroy', it_park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+  <div class="col-md-2">
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to 'New It park', new_it_park_path %>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <div class="col-md-8">
+    <div class="well">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<%= link_to 'New It park', new_it_park_path %>
+        <tbody>
+          <% @it_parks.each do |it_park| %>
+            <tr>
+              <td><%= raw it_park.content %></td>
+              <% if current_user && (current_user.has_role? :admin) %>
+                <td><%= link_to 'Show', it_park %></td>
+                <td><%= link_to 'Edit', edit_it_park_path(it_park) %></td>
+                <td><%= link_to 'Destroy', it_park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+</div>
