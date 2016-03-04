@@ -1,0 +1,5 @@
+// $(".show-service").html("<%= escape_javascript(render 'services/show') %>")
+
+$('.show-service').bind('ajax:success', function() {
+   $(".render-service").html("<%= escape_javascript(render 'services/show') %>");
+});

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sub Centers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_centers.each do |sub_center| %>
+      <tr>
+        <td><%= raw sub_center.content %></td>
+        <td><%= link_to 'Show', sub_center %></td>
+        <td><%= link_to 'Edit', edit_sub_center_path(sub_center) %></td>
+        <td><%= link_to 'Destroy', sub_center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub center', new_sub_center_path %>

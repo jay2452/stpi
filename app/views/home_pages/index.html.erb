@@ -19,32 +19,52 @@
       <div class="rotated-box">
         <div id="reverse-rotate" style="margin-top: 15%;"><%= link_to "About Us", '#' %></div>
       </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 15%;">Policy</div>
-      </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-top: 20%;">IT Park</div>
-      </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-left: 1%; margin-top: 20%;">Tender</div>
-      </div>
+
+      <a href="<%= policies_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+            <div id="reverse-rotate" style="margin-left: 5%; margin-top: 15%;">Policy</div>
+        </div>
+      </a>
+
+      <a href="<%= it_parks_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+          <div id="reverse-rotate" style="margin-top: 20%;">IT Park</div>
+        </div>
+      </a>
+
+      <a href="<%= tenders_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+          <div id="reverse-rotate" style="margin-left: 1%; margin-top: 20%;">Tender</div>
+        </div>
+      </a>
 
     </div>
 
     <div class="col-md-6" style="margin-left:2%;">
       <br>
-      <div class="rotated-box">
-        <div id="reverse-rotate" style="margin-left: -12%; margin-top: 25%;"><%= link_to "Downloads", downloads_path %></div>
-      </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-left: -1%; margin-top: 15%;">Grievance <br>&nbsp;&nbsp;Cell</div>
-      </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 6%;">&nbsp;&nbsp;Sub <br> Center</div>
-      </div>
-      <div class="rotated-box" style="margin-top:-5%;">
-        <div id="reverse-rotate" style="margin-left: 5%; margin-top: 20%;">FAQs</div>
-      </div>
+      <a href="<%= downloads_path %>">
+        <div class="rotated-box">
+          <div id="reverse-rotate" style="margin-left: -12%; margin-top: 25%;">Downloads</div>
+        </div>
+      </a>
+
+      <a href="<%= gcells_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+          <div id="reverse-rotate" style="margin-left: -1%; margin-top: 15%;">Grievance Cell</div>
+        </div>
+      </a>
+
+      <a href="<%= sub_centers_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+          <div id="reverse-rotate" style="margin-left: 5%; margin-top: 6%;">Sub Center</div>
+        </div>
+      </a>
+
+      <a href="<%= faqs_path %>">
+        <div class="rotated-box" style="margin-top:-5%;">
+          <div id="reverse-rotate" style="margin-left: 5%; margin-top: 20%;">FAQs</div>
+        </div>
+      </a>
     </div>
 
   </div>
@@ -89,12 +109,13 @@
   <div class="col-md-2">
     <div class="panel panel-default" style="margin-left:-7%; margin-right: -7%;">
       <div class="panel-heading">
-        News and events (<%= link_to "more", feeds_index_path %>)
+        News and events (<%= link_to "more", feeds_path %>)
       </div>
 
       <div class="panel-body">
           <% @feeds.each do |feed| %>
-            <%= feed.topic %> <br>
+            <%= raw feed.topic %>
+            <hr>
           <% end %>
       </div>
     </div>

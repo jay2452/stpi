@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+  <div class="col-md-3">
+    <div class="flex-container">
+      <% @services.each do |service| %>
+        <a href="services/<%= service.id %>" data-remote="true" class="show-service">
+          <div class="flex-item">
+            <%= service.title %><br>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <% if current_user && (current_user.has_role? :admin) %>
+    (  <%= link_to 'Add a Service', new_service_path %>)
+    <% end %>
+    <div class="well">
+      <div class="render-service">      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :services
+  resources :faqs
+  resources :sub_centers
+  resources :gcells
+  resources :tenders
+  resources :it_parks
+  resources :policies
+  mount Ckeditor::Engine => '/ckeditor'
   resources :downloads
   devise_for :users
-  get 'feeds/index'
+  resources :feeds
 
 
   # The priority is based upon order of creation: first created -> highest priority.

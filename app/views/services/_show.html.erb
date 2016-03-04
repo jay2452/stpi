@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <h4 align="center">
+    <b> <%= @service.title %></b>
+    <% if current_user && (current_user.has_role? :admin) %>
+      <small>(<%= link_to 'Edit', edit_service_path(@service) %>) | <%= link_to "Delete", @service, method: :delete %></small>
+    <% end %>
+  </h4>
+  <p>
+    <%= raw @service.content %>
+  </p>
+</div>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing It Parks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @it_parks.each do |it_park| %>
+      <tr>
+        <td><%= raw it_park.content %></td>
+        <td><%= link_to 'Show', it_park %></td>
+        <td><%= link_to 'Edit', edit_it_park_path(it_park) %></td>
+        <td><%= link_to 'Destroy', it_park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New It park', new_it_park_path %>

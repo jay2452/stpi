@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-3">
       <br>
-      <a href="https://india.gov.in/" target="_blank">
+      <!-- <a href="https://india.gov.in/" target="_blank">
         <%= image_tag("india_portal.png", size: "200x60") %>
-      </a>
+      </a> -->
     </div>
 
     <div class="col-md-9">
@@ -18,6 +18,9 @@
           Software Technology Parks of India, Guwahati
         </h2>
       </p>
+      <% if user_signed_in? %>
+        <%= current_user.email %> | <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <% end %>
     </div>
   </div>
   <div class="row" align="center">
@@ -27,15 +30,15 @@ Ministry of Communications & Information Technology, Govt. of India
 </div>
 <div class="container-fluid">
   <nav class="navbar navbar" style="margin-top:1%;">
-    <div class="col-md-1 rounded-tabs">
-      <%= link_to "Home", root_path %>
-    </div>
+    <a href="<%= root_path %>">
+      <div class="col-md-1 rounded-tabs">Home </div>
+    </a>
     <div class="col-md-1 rounded-tabs">
       Mission
     </div>
-    <div class="col-md-1 rounded-tabs">
-      Services
-    </div>
+    <a href="<%= services_path %>">
+      <div class="col-md-1 rounded-tabs">Services</div>
+    </a>
     <div class="col-md-1 rounded-tabs">
       Consultancy
     </div>

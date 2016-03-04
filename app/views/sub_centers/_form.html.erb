@@ -1,0 +1,22 @@
+<%= form_for(@sub_center) do |f| %>
+  <% if @sub_center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sub_center.errors.count, "error") %> prohibited this sub_center from being saved:</h2>
+
+      <ul>
+      <% @sub_center.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.cktext_area :content, :ckeditor => {:uiColor => '#AADC6E'} %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

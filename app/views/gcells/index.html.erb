@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gcells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gcells.each do |gcell| %>
+      <tr>
+        <td><%= raw gcell.content %></td>
+        <td><%= link_to 'Show', gcell %></td>
+        <td><%= link_to 'Edit', edit_gcell_path(gcell) %></td>
+        <td><%= link_to 'Destroy', gcell, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gcell', new_gcell_path %>

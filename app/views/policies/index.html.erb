@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+<!--
+<h1>Listing Policies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policies.each do |policy| %>
+      <tr>
+        <td><%= raw policy.content %></td>
+        <td><%= link_to 'Show', policy %></td>
+        <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+        <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Policy', new_policy_path %> -->
+
+
+<div class="container-fluid">
+  <div class="col-md-3">
+
+  </div>
+
+  <div class="col-md-6">
+    <% if current_user && (current_user.has_role? :admin) %>
+      <h4><%= link_to 'Add Policy', new_policy_path %> </h4>
+    <% end %>
+    <div class="well">
+      <% @policies.each do |policy| %>
+        <%= raw policy.content %>
+        <hr>
+        <% if current_user && (current_user.has_role? :admin) %>
+        |
+          <%= link_to 'Edit', edit_policy_path(policy) %> |
+          <%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+
+  </div>
+</div>
