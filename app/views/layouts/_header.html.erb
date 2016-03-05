@@ -48,14 +48,17 @@ Ministry of Communications & Information Technology, Govt. of India
 
     <div class="col-md-4">
       <div class="form-group">
-        <%= text_field(:query,{} ,class: "form-control") %>
+        <%= form_tag results_path, :method => :get do %>
+            <%= text_field_tag :search, params[:search],class: "form-control", placeholder: "search - enter keywords" %>
+            <!-- <%= submit_tag "Search", :name => nil %> -->
+        <% end %>
       </div>
     </div>
 
     <a href="<%= feedbacks_path %>">
       <div class="col-md-1 rounded-tabs">Feedback</div>
     </a>
-    
+
     <a href="<%= careers_path %>">
       <div class="col-md-1 rounded-tabs">Carrers </div>
     </a>
@@ -63,6 +66,7 @@ Ministry of Communications & Information Technology, Govt. of India
     <a href="<%= contact_path %>">
       <div class="col-md-1 rounded-tabs">Contact Us</div>
     </a>
+
     <div class="col-md-1 rounded-tabs">
       Digital India
     </div>

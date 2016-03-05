@@ -43,8 +43,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
+  gem 'sunspot_solr'
 
+end
+gem 'progress_bar'
 group :development do
     gem 'capistrano',         require: false
     gem 'capistrano-rvm',     require: false
@@ -64,7 +66,6 @@ gem 'paperclip'
 gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'rails_admin'
-gem 'ransack'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'google-webfonts-rails'
@@ -72,3 +73,5 @@ gem 'google-webfonts-rails'
 
 gem 'ckeditor'
 gem 'simple_form'
+
+gem 'sunspot_rails'

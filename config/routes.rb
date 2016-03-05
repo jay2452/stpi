@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home_pages#index'
+  get '/search_results' => 'home_pages#search_results', as: :results
   get '/feedbacks' => 'feedbacks#index'
 
   post '/feedbacks' => 'feedbacks#create', as: :create_feedback
