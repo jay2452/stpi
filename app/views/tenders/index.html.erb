@@ -1,33 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<!-- <h1>Listing Tenders</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tenders.each do |tender| %>
-      <tr>
-        <td><%= raw tender.content %></td>
-        <td><%= link_to 'Show', tender %></td>
-        <td><%= link_to 'Edit', edit_tender_path(tender) %></td>
-        <td><%= link_to 'Destroy', tender, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tender', new_tender_path %> -->
 <div class="container-fluid">
+  <p id="notice"><%= notice %></p>
   <div class="col-md-2">
-
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to 'New Tender', new_tender_path %>
+    <% end %>
   </div>
 
   <div class="col-md-8">
@@ -42,17 +18,16 @@
         <% @tenders.each do |tender| %>
           <tr>
             <td><%= raw tender.content %></td>
-            <td><%= link_to 'Show', tender %></td>
-            <td><%= link_to 'Edit', edit_tender_path(tender) %></td>
-            <td><%= link_to 'Destroy', tender, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if current_user && (current_user.has_role? :admin) %>
+              <td><%= link_to 'Show', tender %></td>
+              <td><%= link_to 'Edit', edit_tender_path(tender) %></td>
+              <td><%= link_to 'Destroy', tender, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <br>
-
-    <%= link_to 'New Tender', new_tender_path %>
   </div>
 
   <div class="col-md-2">

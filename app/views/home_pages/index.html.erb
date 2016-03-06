@@ -112,12 +112,14 @@
         News and events (<%= link_to "more", feeds_path %>)
       </div>
 
+      <marquee direction="up" scrolldelay="100" onmouseover="this.stop();" onmouseout="this.start();">
       <div class="panel-body">
           <% @feeds.each do |feed| %>
             <%= raw feed.topic %>
             <hr>
           <% end %>
       </div>
+    </marquee>
     </div>
   </div>
 </div>
