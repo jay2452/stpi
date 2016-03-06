@@ -32,8 +32,10 @@
   <div class="col-md-8">
     <div class="pane panel-default">
       <% @missions.each do |mission| %>
-      <%= link_to 'Edit', edit_mission_path(mission) %> |
-      <%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+      <% if current_user && (current_user.has_role? :admin) %>
+        <%= link_to 'Edit', edit_mission_path(mission) %> |
+        <%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
       <%= raw mission.content %>
 
       <% end %>

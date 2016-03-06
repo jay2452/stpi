@@ -18,15 +18,32 @@
  @import "bootstrap";
  @import "font-awesome";
 
-body {
-   margin-bottom:10px;
+ body {
+     font: "Montserrat", sans-serif;
+ }
+
+//
+//  footer{
+//      position:relative;
+//      height:50px;
+//      bottom:0px;
+//      left:0px;
+//      right:0px;
+//      margin-bottom:0px;
+//  }
+
+.bg-1 {
+  background-image: url("n-gangtok.jpg");
+  color: #ffffff;
 }
 
- footer{
-     position:relative;
-     height:50px;
-     bottom:0px;
-     left:0px;
-     right:0px;
-     margin-bottom:0px;
- }
+.bg-2 {
+  background-color: #F0F1F3;
+  color: #ffffff;
+  height: 50%; 
+}
+
+.bg-4 {
+   background-color: #2f2f2f;
+   color: #ffffff;
+}
