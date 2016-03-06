@@ -7,7 +7,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @service.content %>
+  <%= raw @service.content %>
 </p>
 
 <%= link_to 'Edit', edit_service_path(@service) %> |

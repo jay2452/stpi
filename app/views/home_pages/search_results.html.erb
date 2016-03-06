@@ -1,3 +1,79 @@
 <div class="container-fluid">
-  
+  <div class="row">
+    <div class="container">
+      <% @arr1.each do |obj| %>
+        <!-- <%= obj.class %> <br> -->
+        <% if obj.class == Service %>
+          <div class="panel">
+            <%= obj.title %> <br>
+            <%= link_to service_url(obj), service_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Download  %>
+          <div class="panel">
+            <%= obj.title %> <br>
+            <%= link_to download_url(obj), obj.file.url %> <br>
+          </div>
+
+        <% elsif obj.class == Feed  %>
+          <div class="panel">
+            <%= raw obj.topic %> <br>
+            <%= link_to feed_url(obj), feed_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == ItPark  %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to it_park_url(obj), it_park_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Policy %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to policies_url(obj), policies_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Tender %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to tender_url(obj), tender_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == SubCenter %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to sub_center_url(obj), sub_center_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Mission %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to mission_url(obj), mission_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Gcell %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to gcell_url(obj), gcell_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Career %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to career_url(obj), career_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Faq  %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to faq_url(obj), faq_path(obj) %> <br>
+          </div>
+
+
+        <% end %>
+
+      <% end %>
+    </div>
+
+  </div>
 </div>
