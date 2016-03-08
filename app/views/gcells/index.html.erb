@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<!-- -->
+<% provide :title, "Grievence Cell" %>
 
 <div class="container-fluid">
+  <p id="notice"><%= notice %></p>
   <div class="col-md-2">
     <% if current_user && (current_user.has_role? :admin) %>
       <%= link_to 'New Gcell', new_gcell_path %>

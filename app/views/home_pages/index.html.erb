@@ -1,3 +1,4 @@
+<% provide :title, "Welcome" %>
 <div class="container-fluid">
 
   <div class="col-md-2">
@@ -107,13 +108,11 @@
   </div>
 
   <div class="col-md-2">
-    <div class="panel panel-default" style="margin-left:-7%; margin-right: -7%; height: 40vh; overflow-y: hidden;">
+    <div class="panel panel-default" style="margin-left:-7%; margin-right: -7%; height: 45vh; overflow-y: hidden;">
       <div class="panel-heading">
         News and events (<%= link_to "more", feeds_path %>)
       </div>
 
-      <!-- <marquee  behavior="scroll" direction="up" scrollamount="5" direction="up" onmouseover="stop"> -->
-      <!-- <marquee behavior="scroll" direction="up" scrollamount="5" style="width:100%; cursor:pointer;" onmouseover="javascript:this.setAttribute('scrollamount','0');" onmouseout="javascript:this.setAttribute('scrollamount','5');"> -->
       <marquee behavior="scroll" direction="up" onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();" OnMouseOut="this.setAttribute('scrollamount', 5, 0);this.start();" scrollamount="5">
           <% @feeds.each do |feed| %>
             <%= raw feed.topic %>

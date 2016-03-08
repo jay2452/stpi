@@ -1,32 +1,10 @@
-<p id="notice"><%= notice %></p>
-<!--
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @missions.each do |mission| %>
-      <tr>
-        <td><%= mission.content %></td>
-        <td><%= link_to 'Show', mission %></td>
-        <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-        <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Mission', new_mission_path %> -->
-
+<% provide :title, "Missions" %>
 <div class="container-fluid">
+  <p id="notice"><%= notice %></p>
   <div class="col-md-2">
-
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to 'New Mission', new_mission_path %>
+    <% end %>
   </div>
 
   <div class="col-md-8">

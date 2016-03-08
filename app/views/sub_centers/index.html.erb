@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% provide :title, "Sub Centers" %>
 
-<!--
-
- -->
 
 <div class="container-fluid">
+  <p id="notice"><%= notice %></p>
   <div class="col-md-2">
     <% if current_user && (current_user.has_role? :admin) %>
       <%= link_to 'New Sub center', new_sub_center_path %>

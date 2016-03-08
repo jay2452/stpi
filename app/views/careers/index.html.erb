@@ -1,14 +1,8 @@
-<p id="notice"><%= notice %></p>
-<!--
-<h1>Listing Careers</h1>
-
-
-
-<br>
-
--->
+<% provide :title, "Career" %>
 
 <div class="container">
+  <p id="notice"><%= notice %></p>
+
   <div class="col-md-2">
     <% if current_user && (current_user.has_role? :admin) %>
       <%= link_to 'New Career', new_career_path %>

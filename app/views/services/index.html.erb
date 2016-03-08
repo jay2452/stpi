@@ -1,7 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<% provide :title, "Services" %>
 
 <div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+
   <div class="col-md-3">
     <div class="flex-container">
       <% @services.each do |service| %>
