@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :extras
   resources :careers
   resources :consultancies
   resources :missions
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
   post '/feedbacks' => 'feedbacks#create', as: :create_feedback
 
   get '/contact' => 'home_pages#contact', as: :contact
+
+  get '/digital-india' => 'extras#index', as: :digital_india
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306112042) do
+ActiveRecord::Schema.define(version: 20160308152933) do
 
   create_table "careers", force: :cascade do |t|
     t.text     "content"
@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(version: 20160306112042) do
   end
 
   add_index "downloads", ["slug"], name: "index_downloads_on_slug", unique: true
+
+  create_table "extras", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "faqs", force: :cascade do |t|
     t.text     "content"

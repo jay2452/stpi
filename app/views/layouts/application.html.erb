@@ -7,14 +7,14 @@
   <%= csrf_meta_tags %>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
 </head>
-<body>
+  <body>
 
-  <%= render partial: "layouts/header" %>
+    <%= render partial: "layouts/header" %>
 
-<%= yield %>
-<footer class="container-fluid bg-4 text-center">
-  <%= render partial: "layouts/footer" %>
-</footer>
+  <%= yield %>
+    <footer class="container-fluid bg-4 text-center">
+      <%= render partial: "layouts/footer" %>
+    </footer>
 
-</body>
+  </body>
 </html>

@@ -74,6 +74,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    choice (0.2.0)
     chosen-rails (1.4.3)
       coffee-rails (>= 3.2)
       compass-rails (>= 2.0.4)
@@ -194,6 +195,11 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.4.6)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails_admin (0.8.1)
@@ -227,6 +233,7 @@ GEM
     rolify (5.0.0)
     rsolr (1.0.12)
       builder (>= 2.1.2)
+    ruby-graphviz (1.2.2)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -306,6 +313,7 @@ DEPENDENCIES
   progress_bar
   puma
   rails (= 4.2.5.1)
+  rails-erd
   rails_admin
   rolify
   sass-rails (~> 5.0)

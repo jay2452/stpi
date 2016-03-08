@@ -56,7 +56,7 @@ group :development do
 end
 
 gem 'puma'
-
+gem 'rails-erd'
 
 gem 'devise'
 gem 'rolify'
