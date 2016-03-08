@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require gistfile1
 //= require ckeditor/init
 //= require turbolinks
 //= require_tree .
+
+$('marquee').marquee(optionalClass);

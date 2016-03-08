@@ -112,8 +112,9 @@
         News and events (<%= link_to "more", feeds_path %>)
       </div>
 
-      <marquee direction="up" scrolldelay="100" onmouseover="this.stop();" onmouseout="this.start();">
-      <div class="panel-body">
+      <!-- <marquee  behavior="scroll" direction="up" scrollamount="5" direction="up" onmouseover="stop"> -->
+      <!-- <marquee behavior="scroll" direction="up" scrollamount="5" style="width:100%; cursor:pointer;" onmouseover="javascript:this.setAttribute('scrollamount','0');" onmouseout="javascript:this.setAttribute('scrollamount','5');"> -->
+      <marquee behavior="scroll" direction="up" onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();" OnMouseOut="this.setAttribute('scrollamount', 5, 0);this.start();" scrollamount="5">
           <% @feeds.each do |feed| %>
             <%= raw feed.topic %>
             <hr>
