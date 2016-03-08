@@ -18,19 +18,26 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ html {
+     position: relative;
+     min-height: 100%;
+ }
+
+
  body {
+     margin: 0 0 100px;
      font: "Montserrat", sans-serif;
  }
 
-//
-//  footer{
-//      position:relative;
-//      height:50px;
-//      bottom:0px;
-//      left:0px;
-//      right:0px;
-//      margin-bottom:0px;
-//  }
+
+ footer{
+     position:absolute;
+     bottom:0;
+     left:0;
+     right:0;
+     height: 80px;
+     overflow:hidden;
+ }
 
 .bg-1 {
   background-image: url("n-gangtok.jpg");
@@ -54,7 +61,7 @@
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 
 .navbar-nav li a:hover {

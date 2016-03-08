@@ -1,6 +1,6 @@
 class HomePagesController < ApplicationController
   def index
-    @feeds = Feed.all.order(created_at: :desc).limit(3)
+    @feeds = Feed.all.order(created_at: :desc).limit(5)
   end
 
   def contact
