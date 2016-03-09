@@ -27,4 +27,4 @@ production:
   socket: /var/run/mysqld/mysqld.sock
   database: stpi_production
   username: root
-  password: root
+  password: 
