@@ -27,7 +27,7 @@ class HomePagesController < ApplicationController
 
     arr << @consultancies
 
-    @search_download = Download.search(content_cont: q)
+    @search_download = Download.search(title_cont: q)
     @downloads = @search_download.result
 
     arr << @downloads
@@ -38,7 +38,7 @@ class HomePagesController < ApplicationController
     arr << @faqs
 
 
-    @search_feed = Feed.search(content_cont: q)
+    @search_feed = Feed.search(topic_cont: q)
     @feeds = @search_feed.result
 
     arr << @feeds
