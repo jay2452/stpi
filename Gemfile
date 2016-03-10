@@ -50,7 +50,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'sunspot_solr'
+  # gem 'sunspot_solr'
   gem 'sqlite3'
 end
 gem 'progress_bar'
@@ -82,4 +82,4 @@ gem 'friendly_id'
 gem 'ckeditor'
 gem 'simple_form'
 
-gem 'sunspot_rails'
+# gem 'sunspot_rails'
