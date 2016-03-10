@@ -83,3 +83,5 @@ gem 'ckeditor'
 gem 'simple_form'
 
 # gem 'sunspot_rails'
+
+gem 'ransack'
