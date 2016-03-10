@@ -11,21 +11,25 @@ class MissionsController < ApplicationController
   # GET /missions/1
   # GET /missions/1.json
   def show
+    authorize! :read, @mission
   end
 
   # GET /missions/new
   def new
     @mission = Mission.new
+    authorize! :new, @mission
   end
 
   # GET /missions/1/edit
   def edit
+    authorize! :edit, @mission
   end
 
   # POST /missions
   # POST /missions.json
   def create
     @mission = Mission.new(mission_params)
+    authorize! :create, @mission
 
     respond_to do |format|
       if @mission.save
@@ -41,6 +45,7 @@ class MissionsController < ApplicationController
   # PATCH/PUT /missions/1
   # PATCH/PUT /missions/1.json
   def update
+    authorize! :update, @mission
     respond_to do |format|
       if @mission.update(mission_params)
         format.html { redirect_to @mission, notice: 'Mission was successfully updated.' }
@@ -55,6 +60,7 @@ class MissionsController < ApplicationController
   # DELETE /missions/1
   # DELETE /missions/1.json
   def destroy
+    authorize! :destroy, @mission
     @mission.destroy
     respond_to do |format|
       format.html { redirect_to missions_url, notice: 'Mission was successfully destroyed.' }

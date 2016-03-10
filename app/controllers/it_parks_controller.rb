@@ -11,21 +11,25 @@ class ItParksController < ApplicationController
   # GET /it_parks/1
   # GET /it_parks/1.json
   def show
+    authorize! :read, @it_park
   end
 
   # GET /it_parks/new
   def new
     @it_park = ItPark.new
+    authorize! :new, @it_park
   end
 
   # GET /it_parks/1/edit
   def edit
+    authorize! :edit, @it_park
   end
 
   # POST /it_parks
   # POST /it_parks.json
   def create
     @it_park = ItPark.new(it_park_params)
+    authorize! :create, @it_park
 
     respond_to do |format|
       if @it_park.save
@@ -41,6 +45,7 @@ class ItParksController < ApplicationController
   # PATCH/PUT /it_parks/1
   # PATCH/PUT /it_parks/1.json
   def update
+    authorize! :update, @it_park
     respond_to do |format|
       if @it_park.update(it_park_params)
         format.html { redirect_to @it_park, notice: 'It park was successfully updated.' }
@@ -55,6 +60,7 @@ class ItParksController < ApplicationController
   # DELETE /it_parks/1
   # DELETE /it_parks/1.json
   def destroy
+    authorize! :destroy, @it_park
     @it_park.destroy
     respond_to do |format|
       format.html { redirect_to it_parks_url, notice: 'It park was successfully destroyed.' }

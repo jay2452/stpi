@@ -10,21 +10,25 @@ class FaqsController < ApplicationController
   # GET /faqs/1
   # GET /faqs/1.json
   def show
+    authorize! :read, @faq
   end
 
   # GET /faqs/new
   def new
     @faq = Faq.new
+    authorize! :new, @faq
   end
 
   # GET /faqs/1/edit
   def edit
+    authorize! :edit, @faq
   end
 
   # POST /faqs
   # POST /faqs.json
   def create
     @faq = Faq.new(faq_params)
+    authorize! :create, @faq
 
     respond_to do |format|
       if @faq.save
@@ -40,6 +44,7 @@ class FaqsController < ApplicationController
   # PATCH/PUT /faqs/1
   # PATCH/PUT /faqs/1.json
   def update
+    authorize! :update, @faq
     respond_to do |format|
       if @faq.update(faq_params)
         format.html { redirect_to @faq, notice: 'Faq was successfully updated.' }
@@ -54,6 +59,7 @@ class FaqsController < ApplicationController
   # DELETE /faqs/1
   # DELETE /faqs/1.json
   def destroy
+    authorize! :destroy, @faq
     @faq.destroy
     respond_to do |format|
       format.html { redirect_to faqs_url, notice: 'Faq was successfully destroyed.' }

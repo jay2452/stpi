@@ -8,22 +8,25 @@ class FeedsController < ApplicationController
   end
 
   def show
+    authorize! :read, @feed
   end
 
   def new
     @feed = Feed.new
+    authorize! :new, @feed
   end
 
   def edit
-
+    authorize! :edit, @feed
   end
 
   def update
-
+    authorize! :update, @feed
   end
 
   def create
     @feed = Feed.new(feed_params)
+    authorize! :create, @feed
 
     respond_to do |format|
       if @feed.save

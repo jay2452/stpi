@@ -11,21 +11,25 @@ class PoliciesController < ApplicationController
   # GET /policies/1
   # GET /policies/1.json
   def show
+    authorize! :show, @policy
   end
 
   # GET /policies/new
   def new
     @policy = Policy.new
+    authorize! :new, @policy
   end
 
   # GET /policies/1/edit
   def edit
+    authorize! :edit, @policy
   end
 
   # POST /policies
   # POST /policies.json
   def create
     @policy = Policy.new(policy_params)
+    authorize! :create, @policy
 
     respond_to do |format|
       if @policy.save
@@ -41,6 +45,7 @@ class PoliciesController < ApplicationController
   # PATCH/PUT /policies/1
   # PATCH/PUT /policies/1.json
   def update
+    authorize! :update, @policy
     respond_to do |format|
       if @policy.update(policy_params)
         format.html { redirect_to @policy, notice: 'Policy was successfully updated.' }
@@ -55,6 +60,7 @@ class PoliciesController < ApplicationController
   # DELETE /policies/1
   # DELETE /policies/1.json
   def destroy
+    authorize! :destroy, @policy
     @policy.destroy
     respond_to do |format|
       format.html { redirect_to policies_url, notice: 'Policy was successfully destroyed.' }

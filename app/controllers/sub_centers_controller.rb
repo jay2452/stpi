@@ -11,21 +11,25 @@ class SubCentersController < ApplicationController
   # GET /sub_centers/1
   # GET /sub_centers/1.json
   def show
+    authorize! :show, @sub_center
   end
 
   # GET /sub_centers/new
   def new
     @sub_center = SubCenter.new
+    authorize! :new, @sub_center
   end
 
   # GET /sub_centers/1/edit
   def edit
+    authorize! :edit, @sub_center
   end
 
   # POST /sub_centers
   # POST /sub_centers.json
   def create
     @sub_center = SubCenter.new(sub_center_params)
+    authorize! :create, @sub_center
 
     respond_to do |format|
       if @sub_center.save
@@ -41,6 +45,7 @@ class SubCentersController < ApplicationController
   # PATCH/PUT /sub_centers/1
   # PATCH/PUT /sub_centers/1.json
   def update
+    authorize! :update, @sub_center
     respond_to do |format|
       if @sub_center.update(sub_center_params)
         format.html { redirect_to @sub_center, notice: 'Sub center was successfully updated.' }
@@ -55,6 +60,7 @@ class SubCentersController < ApplicationController
   # DELETE /sub_centers/1
   # DELETE /sub_centers/1.json
   def destroy
+    authorize! :destroy, @sub_center
     @sub_center.destroy
     respond_to do |format|
       format.html { redirect_to sub_centers_url, notice: 'Sub center was successfully destroyed.' }

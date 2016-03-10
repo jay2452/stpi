@@ -11,21 +11,25 @@ class ConsultanciesController < ApplicationController
   # GET /consultancies/1
   # GET /consultancies/1.json
   def show
+    authorize! :read, @consultancy
   end
 
   # GET /consultancies/new
   def new
     @consultancy = Consultancy.new
+    authorize! :new, @consultancy
   end
 
   # GET /consultancies/1/edit
   def edit
+    authorize! :edit, @consultancy
   end
 
   # POST /consultancies
   # POST /consultancies.json
   def create
     @consultancy = Consultancy.new(consultancy_params)
+    authorize! :create, @consultancy
 
     respond_to do |format|
       if @consultancy.save
@@ -41,6 +45,7 @@ class ConsultanciesController < ApplicationController
   # PATCH/PUT /consultancies/1
   # PATCH/PUT /consultancies/1.json
   def update
+    authorize! :update, @consultancy
     respond_to do |format|
       if @consultancy.update(consultancy_params)
         format.html { redirect_to @consultancy, notice: 'Consultancy was successfully updated.' }
@@ -55,6 +60,7 @@ class ConsultanciesController < ApplicationController
   # DELETE /consultancies/1
   # DELETE /consultancies/1.json
   def destroy
+    authorize! :destroy, @consultancy
     @consultancy.destroy
     respond_to do |format|
       format.html { redirect_to consultancies_url, notice: 'Consultancy was successfully destroyed.' }

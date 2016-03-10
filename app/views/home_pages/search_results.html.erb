@@ -64,6 +64,12 @@
             <%= link_to career_url(obj), career_path(obj) %> <br>
           </div>
 
+        <% elsif obj.class == Consultancy %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to consultancy_url(obj), consultancy_path(obj) %> <br>
+          </div>
+
         <% elsif obj.class == Faq %>
           <div class="panel">
             <%= raw obj.content %> <br>
@@ -74,6 +80,12 @@
           <div class="panel">
             <%= raw obj.content %> <br>
             <%= link_to digital_india_url, digital_india_path %> <br>
+          </div>
+
+        <% elsif obj.class == About %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to about_us_url, about_us_path %> <br>
           </div>
 
 

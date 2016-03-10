@@ -78,7 +78,12 @@ class HomePagesController < ApplicationController
 
     arr << @digital
 
-    @arr1 = @services + @careers + @consultancies + @downloads + @it_parks + @faqs + @feeds + @gcells + @missions + @policies + @tenders + @sub_centers + @digital
+    @search_about = About.search(content_cont: q)
+    @about = @search_about.result
+
+    arr << @digital
+
+    @arr1 = @services + @careers + @consultancies + @downloads + @it_parks + @faqs + @feeds + @gcells + @missions + @policies + @tenders + @sub_centers + @digital + @about
 
     puts "============================="
       p arr

@@ -11,11 +11,13 @@ class CareersController < ApplicationController
   # GET /careers/1
   # GET /careers/1.json
   def show
+    authorize! :read, @career
   end
 
   # GET /careers/new
   def new
     @career = Career.new
+    authorize! :new, @career
   end
 
   # GET /careers/1/edit
@@ -26,6 +28,7 @@ class CareersController < ApplicationController
   # POST /careers.json
   def create
     @career = Career.new(career_params)
+    authorize! :create, @career
 
     respond_to do |format|
       if @career.save
@@ -36,11 +39,13 @@ class CareersController < ApplicationController
         format.json { render json: @career.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /careers/1
   # PATCH/PUT /careers/1.json
   def update
+    authorize! :update, @career
     respond_to do |format|
       if @career.update(career_params)
         format.html { redirect_to @career, notice: 'Career was successfully updated.' }
@@ -55,6 +60,7 @@ class CareersController < ApplicationController
   # DELETE /careers/1
   # DELETE /careers/1.json
   def destroy
+    authorize! :destroy, @career
     @career.destroy
     respond_to do |format|
       format.html { redirect_to careers_url, notice: 'Career was successfully destroyed.' }

@@ -11,21 +11,25 @@ class GcellsController < ApplicationController
   # GET /gcells/1
   # GET /gcells/1.json
   def show
+    authorize! :read, @gcell
   end
 
   # GET /gcells/new
   def new
     @gcell = Gcell.new
+    authorize! :new, @gcell
   end
 
   # GET /gcells/1/edit
   def edit
+    authorize! :edit, @gcell
   end
 
   # POST /gcells
   # POST /gcells.json
   def create
     @gcell = Gcell.new(gcell_params)
+    authorize! :create, @gcell
 
     respond_to do |format|
       if @gcell.save
@@ -41,6 +45,7 @@ class GcellsController < ApplicationController
   # PATCH/PUT /gcells/1
   # PATCH/PUT /gcells/1.json
   def update
+    authorize! :update, @gcell
     respond_to do |format|
       if @gcell.update(gcell_params)
         format.html { redirect_to @gcell, notice: 'Gcell was successfully updated.' }
@@ -55,6 +60,7 @@ class GcellsController < ApplicationController
   # DELETE /gcells/1
   # DELETE /gcells/1.json
   def destroy
+    authorize! :destroy, @gcell
     @gcell.destroy
     respond_to do |format|
       format.html { redirect_to gcells_url, notice: 'Gcell was successfully destroyed.' }

@@ -10,21 +10,25 @@ class ExtrasController < ApplicationController
   # GET /extras/1
   # GET /extras/1.json
   def show
+    authorize! :read, @extra
   end
 
   # GET /extras/new
   def new
     @extra = Extra.new
+    authorize! :new, @extra
   end
 
   # GET /extras/1/edit
   def edit
+    authorize! :edit, @extra
   end
 
   # POST /extras
   # POST /extras.json
   def create
     @extra = Extra.new(extra_params)
+    authorize! :create, @extra
 
     respond_to do |format|
       if @extra.save
@@ -40,6 +44,7 @@ class ExtrasController < ApplicationController
   # PATCH/PUT /extras/1
   # PATCH/PUT /extras/1.json
   def update
+    authorize! :update, @extra
     respond_to do |format|
       if @extra.update(extra_params)
         format.html { redirect_to @extra, notice: 'Extra was successfully updated.' }
@@ -54,6 +59,7 @@ class ExtrasController < ApplicationController
   # DELETE /extras/1
   # DELETE /extras/1.json
   def destroy
+    authorize! :destroy, @extra
     @extra.destroy
     respond_to do |format|
       format.html { redirect_to extras_url, notice: 'Extra was successfully destroyed.' }

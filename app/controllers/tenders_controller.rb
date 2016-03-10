@@ -10,21 +10,25 @@ class TendersController < ApplicationController
   # GET /tenders/1
   # GET /tenders/1.json
   def show
+    authorize! :show, @tender
   end
 
   # GET /tenders/new
   def new
     @tender = Tender.new
+    authorize! :new, @tender
   end
 
   # GET /tenders/1/edit
   def edit
+    authorize! :edit, @tender
   end
 
   # POST /tenders
   # POST /tenders.json
   def create
     @tender = Tender.new(tender_params)
+    authorize! :create, @tender
 
     respond_to do |format|
       if @tender.save
@@ -40,6 +44,7 @@ class TendersController < ApplicationController
   # PATCH/PUT /tenders/1
   # PATCH/PUT /tenders/1.json
   def update
+    authorize! :update, @tender
     respond_to do |format|
       if @tender.update(tender_params)
         format.html { redirect_to @tender, notice: 'Tender was successfully updated.' }
@@ -54,6 +59,7 @@ class TendersController < ApplicationController
   # DELETE /tenders/1
   # DELETE /tenders/1.json
   def destroy
+    authorize! :destroy, @tender
     @tender.destroy
     respond_to do |format|
       format.html { redirect_to tenders_url, notice: 'Tender was successfully destroyed.' }
