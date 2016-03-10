@@ -16,13 +16,13 @@
             <%= link_to download_url(obj), obj.file.url %> <br>
           </div>
 
-        <% elsif obj.class == Feed  %>
+        <% elsif obj.class == Feed %>
           <div class="panel">
             <%= raw obj.topic %> <br>
             <%= link_to feed_url(obj), feed_path(obj) %> <br>
           </div>
 
-        <% elsif obj.class == ItPark  %>
+        <% elsif obj.class == ItPark %>
           <div class="panel">
             <%= raw obj.content %> <br>
             <%= link_to it_park_url(obj), it_park_path(obj) %> <br>
@@ -64,10 +64,16 @@
             <%= link_to career_url(obj), career_path(obj) %> <br>
           </div>
 
-        <% elsif obj.class == Faq  %>
+        <% elsif obj.class == Faq %>
           <div class="panel">
             <%= raw obj.content %> <br>
             <%= link_to faq_url(obj), faq_path(obj) %> <br>
+          </div>
+
+        <% elsif obj.class == Extra %>
+          <div class="panel">
+            <%= raw obj.content %> <br>
+            <%= link_to digital_india_url, digital_india_path %> <br>
           </div>
 
 

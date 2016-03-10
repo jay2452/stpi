@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :abouts
   resources :extras
   resources :careers
   resources :consultancies
@@ -23,6 +24,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home_pages#index'
+
+
+  get '/about-us' => 'abouts#index', as: :about_us
   get '/search_results' => 'home_pages#search_results', as: :results
   get '/feedbacks' => 'feedbacks#index'
 

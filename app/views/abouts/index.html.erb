@@ -1,0 +1,34 @@
+<% provide :title, "About Us" %>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+  <div class="col-md-3">
+    <div class="flex-container">
+      <% @abouts.each do |about| %>
+        <a href="#">
+          <div class="flex-item">
+            <%= about.topic %> <br>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to 'New About', new_about_path %>
+    <% end %>
+    <div class="well">
+
+      <% @abouts.each do |about| %>
+        <% if current_user && (current_user.has_role? :admin) %>
+          <%= link_to 'Show', about %> |
+          <%= link_to 'Edit', edit_about_path(about) %> |
+          <%= link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <% end %>
+          <%= raw about.content %> <br>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

@@ -17,9 +17,12 @@
 
     <div class="col-md-6" style="margin-left:-2%;">
       <br>
-      <div class="rotated-box">
-        <div id="reverse-rotate" style="margin-top: 15%;"><%= link_to "About Us", '#' %></div>
-      </div>
+      <a href="<%= about_us_path %>">
+        <div class="rotated-box">
+          <div id="reverse-rotate" style="margin-top: 15%;">About Us</div>
+        </div>
+      </a>
+
 
       <a href="<%= policies_path %>">
         <div class="rotated-box" style="margin-top:-5%;">
