@@ -5,7 +5,7 @@ class CareersController < ApplicationController
   # GET /careers
   # GET /careers.json
   def index
-    @careers = Career.all
+    @careers = Career.all.order(created_at: :desc)
   end
 
   # GET /careers/1

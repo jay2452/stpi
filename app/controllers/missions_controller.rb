@@ -5,7 +5,7 @@ class MissionsController < ApplicationController
   # GET /missions
   # GET /missions.json
   def index
-    @missions = Mission.all
+    @missions = Mission.all.order(created_at: :desc)
   end
 
   # GET /missions/1

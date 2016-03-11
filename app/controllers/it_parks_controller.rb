@@ -5,7 +5,7 @@ class ItParksController < ApplicationController
   # GET /it_parks
   # GET /it_parks.json
   def index
-    @it_parks = ItPark.all
+    @it_parks = ItPark.all.order(created_at: :desc)
   end
 
   # GET /it_parks/1

@@ -5,7 +5,7 @@ class SubCentersController < ApplicationController
   # GET /sub_centers
   # GET /sub_centers.json
   def index
-    @sub_centers = SubCenter.all
+    @sub_centers = SubCenter.all.order(created_at: :desc)
   end
 
   # GET /sub_centers/1

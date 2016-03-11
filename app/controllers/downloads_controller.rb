@@ -5,7 +5,7 @@ class DownloadsController < ApplicationController
   # GET /downloads
   # GET /downloads.json
   def index
-    @downloads = Download.all
+    @downloads = Download.all.order(created_at: :desc)
   end
 
   # GET /downloads/1

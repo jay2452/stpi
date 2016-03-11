@@ -19,3 +19,21 @@
 //= require_tree .
 
 $('marquee').marquee(optionalClass);
+
+
+// for jquery.turbolinks
+$(document).on('page:fetch', function() {
+  // $(".loading-indicator").show();
+  $(".preloader").fadeIn();
+  // $(".sk-cube-grid").fadeIn();
+});
+
+$(document).on('page:update', function() {
+  $(".preloader").fadeIn();
+});
+
+$(document).on('page:change', function() {
+  // $(".loading-indicator").hide();
+  // $(".preloader").hide();
+  $(".preloader").hide();
+});

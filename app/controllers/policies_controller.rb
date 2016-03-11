@@ -5,7 +5,7 @@ class PoliciesController < ApplicationController
   # GET /policies
   # GET /policies.json
   def index
-    @policies = Policy.all
+    @policies = Policy.all.order(created_at: :desc)
   end
 
   # GET /policies/1

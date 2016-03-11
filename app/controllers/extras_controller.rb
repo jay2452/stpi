@@ -4,7 +4,7 @@ class ExtrasController < ApplicationController
   # GET /extras
   # GET /extras.json
   def index
-    @extras = Extra.all
+    @extras = Extra.all.order(created_at: :desc)
   end
 
   # GET /extras/1

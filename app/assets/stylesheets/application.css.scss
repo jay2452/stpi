@@ -27,6 +27,7 @@
  body {
      margin: 0 0 100px;
      font: "Montserrat", sans-serif;
+     background-image: url("gradient-3.jpg");
  }
 
 
@@ -66,4 +67,17 @@
 
 .navbar-nav li a:hover {
     color: #1abc9c !important;
+}
+
+.preloader {
+  position:fixed;
+  top:30%;
+  left:40%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  // background-color: #333;
+  // background-repeat:no-repeat;
+  // background-position:center;
+  z-index:10000000;
 }

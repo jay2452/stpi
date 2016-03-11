@@ -5,7 +5,7 @@ class ConsultanciesController < ApplicationController
   # GET /consultancies
   # GET /consultancies.json
   def index
-    @consultancies = Consultancy.all
+    @consultancies = Consultancy.all.order(created_at: :desc)
   end
 
   # GET /consultancies/1

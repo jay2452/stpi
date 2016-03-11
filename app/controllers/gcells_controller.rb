@@ -5,7 +5,7 @@ class GcellsController < ApplicationController
   # GET /gcells
   # GET /gcells.json
   def index
-    @gcells = Gcell.all
+    @gcells = Gcell.all.order(created_at: :desc)
   end
 
   # GET /gcells/1
