@@ -6,6 +6,10 @@ class FeedbacksController < ApplicationController
   #   @feedback = Feedback.new
   # end
 
+  def show_all
+    @feedbacks = Feedback.all.order(created_at: :desc)
+  end
+
   def create
     @feedback = Feedback.new(feedback_params)
 

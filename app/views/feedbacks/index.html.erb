@@ -1,15 +1,18 @@
 <% provide :title, "Give some feedback" %>
 <div class="container">
   <div class="col-md-2">
-
+    <% if current_user && (current_user.has_role? :admin) %>
+      <%= link_to "show all feedbacks", show_feedback_path %>
+    <% end %>
   </div>
   <div class="col-md-8">
     <%= simple_form_for :feedback, controller: :feedbacks, action: :create, method: :post do |f| %>
       <%= f.input :name %>
       <%= f.input :email %>
       <%= f.input :subject %>
-      <%= f.input :description %>
-      <%= f.button :submit %>
+      <i>Give some Feedback</i>
+      <%= f.cktext_area :description, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %><br>
+      <%= f.button :submit, "Submit" %>
     <% end %>
   </div>
 

@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/search_results' => 'home_pages#search_results', as: :results
   get '/feedbacks' => 'feedbacks#index'
 
+  get '/feedbacks/show_all' => 'feedbacks#show_all', as: :show_feedback
   post '/feedbacks' => 'feedbacks#create', as: :create_feedback
 
   get '/contact' => 'home_pages#contact', as: :contact
