@@ -115,14 +115,15 @@
       <div class="panel-heading">
         News and events (<%= link_to "more", feeds_path %>)
       </div>
-
-      <marquee behavior="scroll" direction="up" onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();" OnMouseOut="this.setAttribute('scrollamount', 5, 0);this.start();" scrollamount="5">
+      <div class="panel-body">
+        <marquee behavior="scroll" direction="up" onMouseOver="this.setAttribute('scrollamount', 0, 0);this.stop();" OnMouseOut="this.setAttribute('scrollamount', 5, 0);this.start();" scrollamount="5">
           <% @feeds.each do |feed| %>
             <%= raw feed.topic %>
             <hr>
           <% end %>
+        </marquee>
       </div>
-    </marquee>
     </div>
+
   </div>
 </div>

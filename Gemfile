@@ -52,6 +52,7 @@ group :development do
   gem 'spring'
   # gem 'sunspot_solr'
   gem 'sqlite3'
+  gem "bullet"
 end
 gem 'progress_bar'
 group :development do
