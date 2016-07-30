@@ -16,3 +16,7 @@
 !/log/.keep
 /tmp
 /solr
+
+
+/public/system
+/public/system/*
